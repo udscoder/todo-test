@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 50px;
+    background-color: lightgrey;
+}
+.todo_list{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    padding: 20px;
+}
+.title, h4 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.subtitle {
+    margin-bottom: 50px;
+}
+.savings_page{
+
+    border-radius: 8px;
+}
+.savings_page_title {
+    text-align: center;
+}
+.creating_page {
+    height: 170px;
+    background: #fff;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+.creating_page_content {
+    margin-left: 15px;
+}
+.creating_page-title {
+    height: 30px;
+    background: grey;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+
+.entering_input {
+    margin-top: 20px;
+
+    border: 2px solid black;
+    border-radius: 3px;
+    width: 430px;
+    padding: 5px;
+}
+
+.creating_page_subtitle {
+    margin-top: 5px;
+}
+button{
+    margin-top: 25px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: dodgerblue;
+}
+
