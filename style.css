@@ -4,9 +4,14 @@
     box-sizing: border-box;
 }
 
+
 body {
     padding: 50px;
     background-color: lightgrey;
+}
+
+.dark-mode {
+    background-color: #121212;
 }
 .todo_list{
     position: absolute;
@@ -24,8 +29,16 @@ body {
     margin-bottom: 50px;
 }
 .savings_page{
-
+    text-align: center;
     border-radius: 8px;
+}
+.ulug {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    margin-bottom: 5px;
+    padding: 10px;
 }
 .savings_page_title {
     text-align: center;
@@ -63,6 +76,15 @@ button{
     margin-top: 25px;
     margin-bottom: 10px;
     padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
     background-color: dodgerblue;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+#myBtn {
+    margin-right: 20px;
 }
 
