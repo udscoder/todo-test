@@ -3,16 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
 body {
     padding: 50px;
     background-color: lightgrey;
 }
 
-.dark-mode {
-    background-color: #121212;
-}
+
 .todo_list{
     position: absolute;
     left: 50%;
@@ -20,6 +16,7 @@ body {
     transform: translate(-50%, -50%);
     width: 500px;
     padding: 20px;
+    background-color: #fff;
 }
 .title, h4 {
     text-align: center;
@@ -32,14 +29,7 @@ body {
     text-align: center;
     border-radius: 8px;
 }
-.ulug {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    margin-bottom: 5px;
-    padding: 10px;
-}
+
 .savings_page_title {
     text-align: center;
 }
@@ -54,7 +44,7 @@ body {
 }
 .creating_page-title {
     height: 30px;
-    background: grey;
+    background: lightgrey;
     padding-top: 5px;
     padding-left: 10px;
 }
@@ -62,7 +52,6 @@ body {
 
 .entering_input {
     margin-top: 20px;
-
     border: 2px solid black;
     border-radius: 3px;
     width: 430px;
@@ -71,6 +60,12 @@ body {
 
 .creating_page_subtitle {
     margin-top: 5px;
+}
+.bre {
+    color: #000;
+}
+.myBtn:nth-child(2) {
+    margin-right: 10px;
 }
 button{
     margin-top: 25px;
