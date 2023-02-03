@@ -2,86 +2,40 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.title');
     let savingsPage = document.querySelector('.savings_page'),
         enterInput = document.querySelector('.entering_input'),
-        enterBtn = document.querySelectorAll('.myBtn'),
-        theme = document.querySelector('.todo_list'),
-        darkMode = localStorage.getItem('dark-mode'),
-        sub = document.querySelectorAll('.bre')
+        enterBtn = document.querySelector('.enter_btn'),
 
-    const applyStyle = (domNode, styleObject) => {
-        for (const property in styleObject) {
-            domNode.style[property] = styleObject[property];
-        }
-    }
-
- const domNodes = [];
-    const styleTwo = (domNodes, styleObject) => {
-        Array.from(domNodes).forEach(domNode => {
-            for (const property in styleObject) {
-                domNode.style[property] = styleObject[property];
-            }
-        })
-    }
-
-    const styleObject = {
-
-        darkMode: {
-            backgroundColor: '#000',
-            color: '#fff',
-            btn: {
-                backgroundColor: 'red'
-            },
-            subtitle: {
-                color: 'red'
-            }
-
-        },
-        lightMode:{
-            backgroundColor: '#fff',
-            color: '#000',
-            subtitle: {
-                color: 'black'
-            }
-        },
-        savingsDiv: {
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            backgroundColor: 'lightgrey',
-            color: '#000',
-            marginBottom: '5px',
-            padding: '10px',
-            fontsize: '20px'
-        },
-        deleteBtn: {
-            backgroundColor: 'dodgerblue',
-            padding: '5px',
-            borderRadius: '5px',
-            border: 'none'
-        }
-    }
+        theme = document.querySelector('.theme'),
+        modeChangeBtn = document.querySelector('.mode_btn'),
+        darkMode = localStorage.getItem('dark-mode') ,
+        subtitles = document.querySelectorAll('.subtitles')
 
 
     const enableDarkMode = () => {
-        applyStyle(theme, styleObject.darkMode)
-        styleTwo(sub, styleObject.darkMode.subtitle)
-        enterBtn[1].classList.remove("dark-mode-toggle");
-        localStorage.setItem("dark-mode", "enabled");
+        theme.classList.add('dark-mode-style')
+        for (let i = 0; i < subtitles.length; i++ ) {
+            subtitles[i].classList.remove('light-mode-subtitle')
+            subtitles[i].classList.add('dark-mode-subtitle')
+        }
+        modeChangeBtn.classList.remove("dark-mode-toggle");
+        localStorage.setItem("dark-mode", 'enabled');
     };
     const disableDarkMode = () => {
-        applyStyle(theme, styleObject.lightMode)
-        styleTwo(sub, styleObject.lightMode.subtitle)
-
-        enterBtn[1].classList.add("dark-mode-toggle");
-        localStorage.setItem("dark-mode", "disabled");
+        theme.classList.remove('dark-mode-style')
+        for (let i = 0; i < subtitles.length; i++ ) {
+            subtitles[i].classList.remove('dark-mode-subtitle')
+            subtitles[i].classList.add('light-mode-subtitle')
+        }
+        modeChangeBtn.classList.add("dark-mode-toggle");
+        localStorage.setItem("dark-mode", 'disabled');
     };
 
-    if (darkMode === "enabled") {
+    if (darkMode === 'enabled') {
         enableDarkMode();
     }
 
-    enterBtn[1].addEventListener("click", (e) => {
+    modeChangeBtn.addEventListener("click", () => {
         darkMode = localStorage.getItem("dark-mode");
-        if (darkMode === "disabled") {
+        if (darkMode === 'disabled') {
             enableDarkMode();
 
         } else {
@@ -90,14 +44,12 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 
-
-
     const createDeleteBtn = (savingDiv) => {
         let deleteBtn = document.createElement('button');
 
         deleteBtn.innerHTML = 'Delete'
 
-        applyStyle(deleteBtn, styleObject.deleteBtn)
+        deleteBtn.classList.add('delete_btn')
 
         savingDiv.appendChild(deleteBtn)
 
@@ -119,7 +71,7 @@ window.addEventListener('DOMContentLoaded', () => {
             savingsPage.appendChild(savingsDiv);
             savingsDiv.appendChild(text)
 
-            applyStyle(savingsDiv, styleObject.savingsDiv)
+            savingsDiv.classList.add('savings_div')
 
             text.innerHTML = enterInput.value;
 
@@ -130,11 +82,33 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-    enterBtn[0].addEventListener('click', () => {
+    enterBtn.addEventListener('click', () => {
         createTodo()
     })
 
 })
+
+
+
+
+
+
+
+
+// const applyStyle = (domNode, styleObject) => {
+//     for (const property in styleObject) {
+//         domNode.style[property] = styleObject[property];
+//     }
+// }
+//
+//
+// const styleTwo = (domNodes, styleObject) => {
+//     Array.from(domNodes).forEach(domNode => {
+//         for (const property in styleObject) {
+//             domNode.style[property] = styleObject[property];
+//         }
+//     })
+// }
 
 
 

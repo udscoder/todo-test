@@ -9,7 +9,7 @@ body {
 }
 
 
-.todo_list{
+.theme{
     position: absolute;
     left: 50%;
     top: 50%;
@@ -79,7 +79,38 @@ button{
     display: flex;
     justify-content: space-between;
 }
-#myBtn {
-    margin-right: 20px;
+.mode_btn  {
+    margin-right: 15px;
+}
+
+
+
+.dark-mode-style{
+    background-color: #000;
+    color: #fff;
+}
+
+.dark-mode-subtitle {
+    color: red;
+}
+.light-mode-subtitle {
+    color:black;
+}
+
+.savings_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgrey;
+    color: #000;
+    margin-bottom: 5px;
+    padding: 10px;
+    font-size: 20px;
+}
+.delete_btn{
+    background-color: dodgerblue;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
 }
 
